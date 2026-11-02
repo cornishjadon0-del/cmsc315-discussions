@@ -29,7 +29,6 @@ def insert_at(lst, index, value):
         return False
     # The above method inserts the value at the specified index by shifting elements after
     # that index to the right then inserting the value in the empty spot
-    pass
 
 
 def delete_at(lst, index):

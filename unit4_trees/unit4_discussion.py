@@ -42,6 +42,7 @@ class BST:
           whether a value is smaller or larger than the
           current node.
         """
+        # checks if the BST is empty, and sets the new node as root if true
         if self.root is None:
             self.root = Node(value)
         else:
@@ -59,12 +60,17 @@ class BST:
         - Insert larger values into the right subtree.
         - Return the updated node reference.
         """
+        # explores node.right if value is greater than the current node
         if value > node.key:
+            # if the right reference is empty then the correct location has been found
+            # a new node is set as node.right
             if node.right is None:
                 node.right = Node(value)
 
             else:
+                # if node.right points to a node, then insert recursive calls itself using node.right as a parameter
                 self._insert_recursive(node.right, value)
+        # works same way as above
         if value < node.key:
             if node.left is None:
                 node.left = Node(value)
@@ -84,6 +90,7 @@ class BST:
         - Add comments explaining why BST search is often
           more efficient than linear search.
         """
+        # immediately returns false if  BST is empty
         if self.root is None:
             return False
         return self._search_recursive(self.root, value)
@@ -98,9 +105,12 @@ class BST:
             return True
         # finds value and returns true
         if value > node.key:
+            # if the reference where the value shold be is empty then it doesn't exist and returns false
             if node.right is None:
                 return False
             else:
+            # if the reference where the value should be, exists then the method calls itself using the reference
+            # as the new parameter
                 return self._search_recursive(node.right, value)
         else:
             if node.left is None:
@@ -130,10 +140,14 @@ class BST:
         - Add comments explaining why this traversal
           produces sorted output in a BST.
         """
+        #exit condition when reaching empty references
         if node is None:
             return values
+        # calls itself on all the left subtrees first
         self._inorder_recursive(node.left, values)
+        # first to reach this code is the left most subtree
         values.append(node.key)
+        # then once the left is fully iterated, calls itself with the right subtrees, this produces a list in order
         self._inorder_recursive(node.right, values)
         return values
 

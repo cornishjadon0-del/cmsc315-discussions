@@ -164,7 +164,7 @@ def main():
     opp.insert(15)
     opp.insert(19)
     # a BST is more efficient at searching a BST because each element is guaranteed to be smaller or
-    # larger than its parent based on its location, thus a search algorithm can eliminate paths
+    # larger than its parent based on its location. A search algorithm can eliminate paths
     # this means the worst case is O(sqrt(N)) as apposed to O(N)
 
     # ===============================

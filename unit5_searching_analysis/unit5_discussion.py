@@ -31,6 +31,7 @@ def linear_search(lst, target):
         # loop is changing x to the next value, checking x against target, and incrementing i and when loop finished
         # one last check is made to end the loop, then including the return statement is O(4 + 3N) which simplified is
         # O(N) because insignificant variables are removed as well as constants in big O notation
+      print(i)
       if x == target:
           return i
       else:
@@ -57,6 +58,7 @@ def binary_search(lst, target):
     while h >= l:
         m = (h + l) // 2 # m is our midpoint and is also the index of the list that is checked each loop
         # whatever the subarray is m will always be the middle of it rounded down
+        print(m)
         if lst[m] < target: # if our target is larger than m the low point is set to the index above m
             # this way the program is working with a subarray half the size of the previous one each loop until the
             # end is reached

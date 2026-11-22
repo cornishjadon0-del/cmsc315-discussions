@@ -36,7 +36,8 @@ def main():
     release_dates["Halo: Combat Evolved"] = 2001
     release_dates["Hallow Knight"] = 2017
     release_dates["Portal 2"] = 2011
-
+    # hash tables are data structures with keys and values and each value corresponds to a unique key
+    # dictionaries work nearly identically to hash tables as they also have keys and values and have similar functions
     print("\n=== INSERT OPERATIONS ===")
     print("Creating a dictionary and adding 5 key value pairs")
     print(release_dates)
@@ -53,6 +54,7 @@ def main():
     print("\n=== LOOKUP OPERATIONS ===")
     print("Demonstrating lookup process")
     print(f"Release date of Mario64: {release_dates.get("Mario64")}")
+    # the .get method returns the value at the key "Mario64"
     print(f"Release date of Portal2: {release_dates.get("Portal 2")}")
     # ===============================
     # TODO (Student): UPDATE OPERATIONS
@@ -65,7 +67,9 @@ def main():
     #    a new value.
 
     print("\n=== UPDATE OPERATIONS ===")
-    print("Updating the release fate of Mario64 to 1997 for European release")
+    print("Updating the release date of Mario64 to 1997 for European release")
+    # this inserts the new key value pair into the dictionary replacing the old one
+    # essentially updating it
     release_dates["Mario64"] = 1997
     print(release_dates)
 
@@ -80,6 +84,7 @@ def main():
 
     print("\n=== DELETE OPERATIONS ===")
     print("Deleting Halo: Combat Evolved from the dictionary")
+    # the del opperation allows for the deletion of a key value pair from a dictionary
     del release_dates["Halo: Combat Evolved"]
     print(release_dates)
 
@@ -99,9 +104,10 @@ def main():
 
     print("\n=== EDGE CASES ===")
     print("Demonstrating looking up missing key")
-
+    # the .get method returns none when searching for a key that does not exist
     print(f"Searching for release data of LOZ Ocarina of Time: {release_dates.get("LOZ Ocarina of Time")}")
     print("Updating the value of Portal results in inserting a new entry to the dictionary")
+    # explained in print statement
     release_dates["Portal"] = 2010
     print(release_dates)
 

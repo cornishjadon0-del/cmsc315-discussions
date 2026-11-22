@@ -30,10 +30,16 @@ def main():
     # 3. Add comments explaining how a dictionary
     #    behaves like a hash table.
     # 4. Display the contents of the dictionary.
-
+    release_dates = {}
+    release_dates["GTA6"] = 2026
+    release_dates["Mario64"] = 1996
+    release_dates["Halo: Combat Evolved"] = 2001
+    release_dates["Hallow Knight"] = 2017
+    release_dates["Portal 2"] = 2011
 
     print("\n=== INSERT OPERATIONS ===")
-    print("TODO: Create a dictionary and add multiple key-value pairs.")
+    print("Creating a dictionary and adding 5 key value pairs")
+    print(release_dates)
 
     # ===============================
     # TODO (Student): LOOKUP OPERATIONS
@@ -45,8 +51,9 @@ def main():
     # 3. Add meaningful comments to explain how the lookup works.
 
     print("\n=== LOOKUP OPERATIONS ===")
-    print("TODO: Demonstrate successful key lookups.")
-
+    print("Demonstrating lookup process")
+    print(f"Release date of Mario64: {release_dates.get("Mario64")}")
+    print(f"Release date of Portal2: {release_dates.get("Portal 2")}")
     # ===============================
     # TODO (Student): UPDATE OPERATIONS
     # ===============================
@@ -58,7 +65,9 @@ def main():
     #    a new value.
 
     print("\n=== UPDATE OPERATIONS ===")
-    print("TODO: Demonstrate updating an existing key.")
+    print("Updating the release fate of Mario64 to 1997 for European release")
+    release_dates["Mario64"] = 1997
+    print(release_dates)
 
     # ===============================
     # TODO (Student): DELETE OPERATIONS
@@ -70,7 +79,9 @@ def main():
     # 3. Use comments to explain what happens when a key is removed.
 
     print("\n=== DELETE OPERATIONS ===")
-    print("TODO: Demonstrate deleting a key-value pair.")
+    print("Deleting Halo: Combat Evolved from the dictionary")
+    del release_dates["Halo: Combat Evolved"]
+    print(release_dates)
 
     # ===============================
     # TODO (Student): EDGE CASES
@@ -87,8 +98,12 @@ def main():
     # Explain what happens in each case.
 
     print("\n=== EDGE CASES ===")
-    print("TODO: Demonstrate and explain edge cases.")
+    print("Demonstrating looking up missing key")
 
+    print(f"Searching for release data of LOZ Ocarina of Time: {release_dates.get("LOZ Ocarina of Time")}")
+    print("Updating the value of Portal results in inserting a new entry to the dictionary")
+    release_dates["Portal"] = 2010
+    print(release_dates)
 
 
 if __name__ == "__main__":
